@@ -1,13 +1,13 @@
-import styles from "./Courses.module.css";
+import styles from "../Courses/Courses.module.css";
 import logo from "../../assets/logoELearning.png";
 import avatarAccount from "../../assets/Courses/avatarAccount.png";
 import courseInformation from "../../assets/Courses/courseInformation.png";
 import addCourseInfo from "../../assets/Courses/addCourseInfo.png";
 import removeCourse from "../../assets/Courses/removeCourse.png";
-import { DisplayCourses } from "./courses";
 import { NavNagavigateToPage } from "../components/NavNagavigateToPage";
+import { Outlet } from "react-router-dom";
 
-export function Courses() {
+export function CoursesLayout() {
   return (
     <div className={styles.coursesContainer}>
       <div className={styles.headingContainer}>
@@ -52,20 +52,10 @@ export function Courses() {
           />
         </div>
 
-        <div className={styles.contentRightContainer}>
-          <h1 className={styles.courseHeading}>Course Information</h1>
-          <div className={styles.courseTitleContainer}>
-            <div className={styles.courseTitleInfor}>NO.</div>
-            <div className={styles.courseTitleInfor}>Course Code</div>
-            <div className={styles.courseTitleInfor}>Subject Name</div>
-            <div className={styles.courseTitleInfor}>Credits</div>
-            <div className={styles.courseTitleInfor}>Professor</div>
-            <div className={styles.courseTitleInfor}>School Year</div>
-          </div>
-          <DisplayCourses stylesProps={styles} />
-        </div>
+        <div className={styles.contentRightContainer}></div>
       </div>
       <div className={styles.informationContainer}></div>
+      <Outlet></Outlet>
     </div>
   );
 }

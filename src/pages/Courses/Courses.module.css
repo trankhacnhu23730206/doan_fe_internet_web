@@ -1,4 +1,116 @@
 * {
+  font-family: "Poppins", sans-serif;
   padding: 0;
   margin: 0;
+}
+
+.coursesContainer {
+  background-color: #f0f0f0;
+  height: 100vh;
+
+  .headingContainer {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    padding: 10px 30px;
+    background-color: white;
+    border-bottom: black 1px solid;
+
+    .contentNavHeading {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      font-size: 16px;
+
+      .logoELearning {
+        width: 58px;
+        height: 58px;
+      }
+      .avatarAccount {
+        width: 42px;
+        height: 42px;
+      }
+      .fontUsername {
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .contentContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 42px;
+    margin: 24px 30px;
+    height: 82vh;
+
+    .navLeftContainer {
+      width: 14%;
+      background-color: #8e4c4c;
+      color: white;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+      .courseInformation {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 16px;
+        gap: 10px;
+        padding: 20px 10px 20px 10px;
+        letter-spacing: 2px;
+        cursor: pointer;
+      }
+
+      .courseInformation:hover {
+        background-color: #a66c6c;
+        transition: background-color 0.3s ease;
+        border-radius: 16px;
+      }
+
+      .imageCourseInfor {
+        width: 32px;
+        height: 32px;
+      }
+    }
+    .contentRightContainer {
+      background-color: white;
+      width: 86%;
+      border-radius: 16px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      letter-spacing: 3px;
+
+      .courseHeading {
+        padding: 24px;
+      }
+
+      .courseTitleContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        font-size: 20px;
+        padding: 12px 24px 16px 0;
+        font-weight: bold;
+        border-bottom: 1px solid black;
+
+        .courseTitleInfor {
+          flex: 10%;
+          text-align: center;
+        }
+      }
+      .courseInformationContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        font-size: 16px;
+        padding: 30px 24px 10px 0;
+
+        .courseInformation {
+          flex: 10%;
+          text-align: center;
+        }
+      }
+    }
+  }
 }

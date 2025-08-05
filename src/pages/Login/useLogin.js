@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const listUserAccount = [
+export const listUserAccount = [
     {
         id: 1,
         username: "nguyenvana",
@@ -9,12 +9,14 @@ const listUserAccount = [
         classCode: "CTK42A",
         courses: [
             {
+                courseCode: "MATH301",
                 courseName: "Advanced Mathematics",
                 credits: 3,
                 professor: "Dr. Nguyen Van B",
                 duration: "September 1, 2025 - December 15, 2025"
             },
             {
+                courseCode: "CS102",
                 courseName: "C++ Programming",
                 credits: 4,
                 professor: "Ms. Tran Thi C",
@@ -29,12 +31,14 @@ const listUserAccount = [
         classCode: "CTK42B",
         courses: [
             {
+                courseCode: "DB202",
                 courseName: "Database Systems",
                 credits: 3,
                 professor: "Dr. Pham Van D",
                 duration: "September 5, 2025 - December 10, 2025"
             },
             {
+                courseCode: "NET203",
                 courseName: "Computer Networks",
                 credits: 3,
                 professor: "Mr. Nguyen Huu E",
@@ -49,6 +53,7 @@ const listUserAccount = [
         classCode: "CTK42C",
         courses: [
             {
+                courseCode: "AI401",
                 courseName: "Artificial Intelligence",
                 credits: 4,
                 professor: "Assoc. Prof. Le Quoc F",
@@ -57,6 +62,7 @@ const listUserAccount = [
         ]
     }
 ];
+
 
 function isValidAccount(username, password) {
     return listUserAccount.some(user => (user.username === username) && (user.password === password));
