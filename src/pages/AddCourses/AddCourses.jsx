@@ -1,10 +1,9 @@
-import styles from "./Courses.module.css";
-import { DisplayCourses } from "./courses";
+import { DisplayCourses } from "./addCourses";
+import styles from "./AddCourses.module.css";
 
-export function Courses() {
+export function AddCoursesPage() {
   return (
     <div>
-      <h1 className={styles.courseHeading}>Course Information</h1>
       <div className={styles.courseTitleContainer}>
         <div className={styles.courseTitleInfor}>NO.</div>
         <div className={styles.courseTitleInfor}>Course Code</div>

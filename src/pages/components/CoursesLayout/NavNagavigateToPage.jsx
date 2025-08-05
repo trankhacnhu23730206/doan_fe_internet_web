@@ -5,14 +5,22 @@ export function NavNagavigateToPage({
   imgSrc,
   navigateTo,
   pageName,
+  isActive,
+  onClick,
 }) {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
     navigate(`/${navigateTo}`);
+    if (onClick) onClick();
   };
+
+  const classNames = `${stylesProps.navItems} ${
+    isActive ? stylesProps.active : ""
+  }`;
+
   return (
-    <div className={stylesProps.courseInformation} onClick={handleNavigate}>
+    <div className={classNames} onClick={handleNavigate}>
       <img
         className={stylesProps.imageCourseInfor}
         src={imgSrc}

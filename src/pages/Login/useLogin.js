@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from '../components/UserContext';
 
 export const listUserAccount = [
     {
         id: 1,
+        fullName: "Nguyen Van A",
         username: "nguyenvana",
         password: "123456",
+        email: "nguyenvana@example.com",
         classCode: "CTK42A",
         courses: [
             {
@@ -26,8 +29,10 @@ export const listUserAccount = [
     },
     {
         id: 2,
+        fullName: "Le Thi B",
         username: "lethib",
         password: "abcdef",
+        email: "lethib@example.com",
         classCode: "CTK42B",
         courses: [
             {
@@ -48,8 +53,10 @@ export const listUserAccount = [
     },
     {
         id: 3,
+        fullName: "Tran Van C",
         username: "tranvanc",
         password: "qwerty",
+        email: "tranvanc@example.com",
         classCode: "CTK42C",
         courses: [
             {
@@ -63,16 +70,21 @@ export const listUserAccount = [
     }
 ];
 
-
 function isValidAccount(username, password) {
     return listUserAccount.some(user => (user.username === username) && (user.password === password));
 }
 
+function getUserByUserName(username) {
+    return listUserAccount.find(user => user.username === username);
+
+}
 export function useLogin() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMassage, setErrorMassage] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
+
+    const { login } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -80,14 +92,20 @@ export function useLogin() {
         setIsFormValid(username.trim() !== '' && password.trim() !== '');
     }, [username, password]);
 
-    const handleLogin = () => {
+    const handleLogin = (e) => {
+        e.preventDefault();
         if (!(isValidAccount(username, password))) {
             setErrorMassage('Your username or password is incorrect.');
-            return;
+            return null;
         }
         else {
+            const userLogIn = getUserByUserName(username);
             setErrorMassage('');
-            navigate(`/courses`)
+            login({
+                username,
+                id: userLogIn.id,
+            })
+            return navigate(`/courses`)
         }
     };
 

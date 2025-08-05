@@ -1,10 +1,9 @@
-import styles from "./Courses.module.css";
-import { DisplayCourses } from "./courses";
+import { DisplayCourses } from "./removeCourses";
+import styles from "./RemoveCourses.module.css";
 
-export function Courses() {
+export function RemoveCoursesPage() {
   return (
     <div>
-      <h1 className={styles.courseHeading}>Course Information</h1>
       <div className={styles.courseTitleContainer}>
         <div className={styles.courseTitleInfor}>NO.</div>
         <div className={styles.courseTitleInfor}>Course Code</div>
@@ -13,6 +12,7 @@ export function Courses() {
         <div className={styles.courseTitleInfor}>Professor</div>
         <div className={styles.courseTitleInfor}>School Year</div>
       </div>
+
       <DisplayCourses stylesProps={styles} />
     </div>
   );
