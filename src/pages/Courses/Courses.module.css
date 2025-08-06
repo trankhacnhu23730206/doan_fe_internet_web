@@ -1,0 +1,29 @@
+.courseHeading {
+  padding: 24px;
+}
+.courseTitleContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  font-size: 20px;
+  padding: 12px 24px 16px 0;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+
+  .courseTitleInfor {
+    flex: 10%;
+    text-align: center;
+  }
+}
+.courseInformationContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  font-size: 16px;
+  padding: 30px 24px 10px 0;
+
+  .courseInformation {
+    flex: 10%;
+    text-align: center;
+  }
+}
