@@ -4,6 +4,10 @@ import avatarAccount from "../../../assets/Courses/avatarAccount.png";
 import courseInformation from "../../../assets/Courses/courseInformation.png";
 import addCourseInfo from "../../../assets/Courses/addCourseInfo.png";
 import removeCourse from "../../../assets/Courses/removeCourse.png";
+import passwordKeyImage from "../../../assets/Courses/passwordKeyImage.png";
+import logOut from "../../../assets/Courses/logout.png";
+
+
 import { Outlet } from "react-router-dom";
 import { useContext, useState } from "react";
 import { NavNagavigateToPage } from "./NavNagavigateToPage";
@@ -26,7 +30,7 @@ export function CoursesLayout() {
           />
           <h2>E-Learning</h2>
         </div>
-        <div className={styles.contentNavHeading}>
+        <div className={styles.contentNavHeadingAvatar}>
           <img
             className={styles.avatarAccount}
             src={avatarAccount}
@@ -35,6 +39,25 @@ export function CoursesLayout() {
           <p className={styles.fontUsername}>{userLogedIn.fullName}</p>
         </div>
       </div>
+
+       <div className={styles.navHeadingProfileContainer}>
+          <div className={styles.navHeadingProfileContent}>
+            <img
+            className={styles.logoInfo}
+            src={passwordKeyImage}
+            alt="Password Key"
+          />
+            <p>Account</p>
+          </div>
+          <div className={styles.navHeadingProfileContent}>
+            <img
+            className={styles.logoInfo}
+            src={logOut}
+            alt="Password Key"
+          />
+            <p>Log Out</p>
+          </div>
+        </div>
       <div className={styles.contentContainer}>
         <div className={styles.navLeftContainer}>
           <NavNagavigateToPage
