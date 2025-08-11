@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../components/UserContext";
+import {  useState } from "react";
 import { listUserAccount } from "../Login/useLogin";
 
 export const courseList = [
@@ -70,8 +69,7 @@ export const courseList = [
 ];
 
 export function DisplayCourses({ stylesProps }) {
-    const { user } = useContext(UserContext);
-    const userLogedIn = getCoursesByUser(user);
+    const userLogedIn = getCoursesByUser();
 
     const [selectedCourses, setSelectedCourses] = useState([]);
 
@@ -147,7 +145,8 @@ export function DisplayCourses({ stylesProps }) {
     );
 }
 
-function getCoursesByUser(user) {
-    if (!user || !user.id) return null;
-    return listUserAccount.find((users) => users.id === user.id);
-}
+function getCoursesByUser() {
+    const userFromStorage = JSON.parse(localStorage.getItem("user"));
+    if (!userFromStorage || !userFromStorage.id) return null;
+    return listUserAccount.find(users => users.id === userFromStorage.id);
+};

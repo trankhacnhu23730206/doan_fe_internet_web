@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../components/UserContext';
 
 export const listUserAccount = [
     {
@@ -84,8 +83,6 @@ export function useLogin() {
     const [errorMassage, setErrorMassage] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
 
-    const { login } = useContext(UserContext);
-
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -101,10 +98,7 @@ export function useLogin() {
         else {
             const userLogIn = getUserByUserName(username);
             setErrorMassage('');
-            login({
-                username,
-                id: userLogIn.id,
-            })
+            localStorage.setItem('user', JSON.stringify(userLogIn));
             return navigate(`/courses`)
         }
     };
