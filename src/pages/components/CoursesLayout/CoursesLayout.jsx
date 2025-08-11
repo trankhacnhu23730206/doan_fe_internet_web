@@ -7,16 +7,20 @@ import addCourseInfo from "../../../assets/Courses/addCourseInfo.png";
 import removeCourse from "../../../assets/Courses/removeCourse.png";
 import passwordKeyImage from "../../../assets/Courses/passwordKeyImage.png";
 import logOut from "../../../assets/Courses/logout.png";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { NavNagavigateToPage } from "./NavNagavigateToPage";
 import { getCoursesByUser } from "./CoursesLayout.js";
 
 export function CoursesLayout() {
   const userLogedIn = getCoursesByUser();
+
   const [activeItem, setActiveItem] = useState("courses");
   const [showProfile, setShowProfile] = useState(false);
+
   const profileRef = useRef(null); 
   const headingAvatarRef = useRef(null);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
   function handleClickOutside(event) {
@@ -53,8 +57,8 @@ export function CoursesLayout() {
       </div>
 
       {showProfile && (
-        <div className={styles.navHeadingProfileContainer} ref={profileRef}>
-          <div className={styles.navHeadingProfileContent}>
+        <div className={styles.navHeadingProfileContainer} ref={profileRef} >
+          <div className={styles.navHeadingProfileContent}  onClick={() => navigate(`/account`)}>
             <img className={styles.logoInfo} src={passwordKeyImage} alt="Password Key" />
             <p>Account</p>
           </div>

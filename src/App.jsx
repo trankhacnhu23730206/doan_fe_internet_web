@@ -16,6 +16,7 @@ function App() {
           <Route path="add-course" element={<AddCoursesPage />} />
           <Route path="remove-course" element={<RemoveCoursesPage />} />
         </Route>
+        <Route path="/account" element={<CoursesLayout />} />
       </Routes>
     </BrowserRouter>
   );
