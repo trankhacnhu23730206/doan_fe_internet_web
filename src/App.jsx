@@ -4,6 +4,7 @@ import { Courses } from "./pages/Courses/Courses.jsx";
 import { AddCoursesPage } from "./pages/AddCourses/AddCourses.jsx";
 import { CoursesLayout } from "./pages/components/CoursesLayout/CoursesLayout.jsx";
 import { RemoveCoursesPage } from "./pages/RemoveCourses/RemoveCourses.jsx";
+import { AccountLayout } from "./pages/components/AccountLayout/AccountLayout.jsx";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <Route path="add-course" element={<AddCoursesPage />} />
           <Route path="remove-course" element={<RemoveCoursesPage />} />
         </Route>
-        <Route path="/account" element={<CoursesLayout />} />
+        <Route path="/account" element={<AccountLayout />} />
       </Routes>
     </BrowserRouter>
   );

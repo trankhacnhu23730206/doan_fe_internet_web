@@ -22,6 +22,7 @@
       gap: 10px;
       align-items: center;
       font-size: 16px;
+      cursor: pointer;
 
       .logoELearning {
         width: 58px;
@@ -110,7 +111,7 @@
     height: 84vh;
 
     .navLeftContainer {
-      width: 14%;
+      width: 15%;
       background-color: #8e4c4c;
       color: white;
       border-radius: 16px;

@@ -22,6 +22,16 @@ export function CoursesLayout() {
 
   const navigate = useNavigate();
 
+    const handleLogOut = () => {
+        localStorage.removeItem('user');
+        navigate('/login');
+    };
+
+    const handleNavigate = (page) => {
+        navigate(page);
+    }
+
+
   useEffect(() => {
   function handleClickOutside(event) {
     if (
@@ -42,7 +52,7 @@ export function CoursesLayout() {
   return (
     <div className={styles.coursesContainer}>
       <div className={styles.headingContainer}>
-        <div className={styles.contentNavHeading}>
+        <div className={styles.contentNavHeading} onClick={() => handleNavigate(`/courses`)}>
           <img className={styles.logoELearning} src={logo} alt="logo-ELearning" />
           <h2>E-Learning</h2>
         </div>
@@ -62,7 +72,7 @@ export function CoursesLayout() {
             <img className={styles.logoInfo} src={passwordKeyImage} alt="Password Key" />
             <p>Account</p>
           </div>
-          <div className={styles.navHeadingProfileContent}>
+          <div className={styles.navHeadingProfileContent} onClick={() => handleLogOut(`/login`)} >
             <img className={styles.logoInfo} src={logOut} alt="Log Out" />
             <p>Log Out</p>
           </div>
@@ -75,7 +85,7 @@ export function CoursesLayout() {
             stylesProps={styles}
             imgSrc={courseInformation}
             navigateTo="courses"
-            pageName="Courses information"
+            pageName="Courses Information"
             isActive={activeItem === "courses"}
             onClick={() => setActiveItem("courses")}
           />

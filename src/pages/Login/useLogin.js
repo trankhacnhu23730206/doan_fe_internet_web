@@ -7,8 +7,10 @@ export const listUserAccount = [
         fullName: "Nguyen Van A",
         username: "nguyenvana",
         password: "123456",
-        email: "nguyenvana@example.com",
+        studentID: "SV0001",
+        gender: "Male",
         classCode: "CTK42A",
+        email: "nguyenvana@example.com",
         courses: [
             {
                 courseCode: "MATH301",
@@ -31,8 +33,10 @@ export const listUserAccount = [
         fullName: "Le Thi B",
         username: "lethib",
         password: "abcdef",
-        email: "lethib@example.com",
+        studentID: "SV0002",
+        gender: "Female",
         classCode: "CTK42B",
+        email: "lethib@example.com",
         courses: [
             {
                 courseCode: "DB202",
@@ -55,8 +59,10 @@ export const listUserAccount = [
         fullName: "Tran Van C",
         username: "tranvanc",
         password: "qwerty",
-        email: "tranvanc@example.com",
+        studentID: "SV0003",
+        gender: "Male",
         classCode: "CTK42C",
+        email: "tranvanc@example.com",
         courses: [
             {
                 courseCode: "AI401",
@@ -68,6 +74,7 @@ export const listUserAccount = [
         ]
     }
 ];
+
 
 function isValidAccount(username, password) {
     return listUserAccount.some(user => (user.username === username) && (user.password === password));

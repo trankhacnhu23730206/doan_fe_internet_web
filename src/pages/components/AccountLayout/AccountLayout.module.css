@@ -1,0 +1,219 @@
+* {
+    font-family: "Poppins", sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.coursesContainer {
+    background-color: #f0f0f0;
+    height: 100vh;
+
+    .headingContainer {
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        padding: 10px 70px;
+        background-color: white;
+        border-bottom: black 1px solid;
+
+        .contentNavHeading {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            font-size: 16px;
+            cursor: pointer;
+
+            .logoELearning {
+                width: 58px;
+                height: 58px;
+            }
+
+            .avatarAccount {
+                width: 42px;
+                height: 42px;
+            }
+
+            .fontUsername {
+                font-weight: 600;
+                font-size: 16px;
+            }
+        }
+
+        .contentNavHeadingAvatar {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+            font-size: 16px;
+            position: relative;
+            cursor: pointer;
+
+            .avatarAccount {
+                width: 42px;
+                height: 42px;
+            }
+
+            .fontUsername {
+                font-weight: 600;
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    .navHeadingProfileContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        border-radius: 12px;
+        position: absolute;
+        top: 65px;
+        right: 36px;
+        width: 180px;
+        height: 100px;
+        background-color: white;
+
+
+        .navHeadingProfileContent {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 16px;
+            gap: 10px;
+            padding: 10px;
+            letter-spacing: 2px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #d3d3d3;
+                transition: background-color 0.3s ease;
+                border-radius: 16px;
+                transform: translateY(-2px);
+                transition: all 0.2s ease;
+            }
+
+            .logoInfo {
+                width: 22px;
+                height: 22px;
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .contentContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 42px;
+        margin: 24px 70px;
+        height: 84vh;
+
+        .navLeftContainer {
+            width: 15%;
+            background-color: #8e4c4c;
+            color: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            .navLeftHeading {
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                gap: 10px;
+                padding: 20px 10px 20px 10px;
+                letter-spacing: 2px;
+                border-bottom: 1px solid rgb(255, 248, 248);
+                font-weight: bolder;
+
+                .imageAvatarHeading {
+                    width: 65px;
+                    height: 65px;
+                }
+            }
+
+            .navItems {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                font-size: 16px;
+                gap: 10px;
+                margin-top: 10px;
+                padding: 10px;
+                letter-spacing: 2px;
+                cursor: pointer;
+            }
+
+            .active {
+                background-color: #d37979;
+                color: white;
+                border-radius: 16px;
+            }
+
+            .navItems:hover {
+                background-color: #bb7171;
+                transition: background-color 0.3s ease;
+                border-radius: 16px;
+            }
+
+            .imageCourseInfor {
+                width: 32px;
+                height: 32px;
+            }
+
+
+        }
+
+        .contentRightContainer {
+            background-color: white;
+            width: 86%;
+            border-radius: 16px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: 3px;
+
+            .contentRightHeading{
+                padding: 40px 20px;
+            }
+
+            .contentItemContainer {
+                display: flex;
+                align-items: center;
+                gap: 80px;
+                padding: 10px 0 24px 100px;
+
+                .contentItemLeft {
+                    width: 15%;
+                }
+                .contentItemRight{
+                    max-width: 50%;
+                }
+                .formInput {
+                    width: 25%;
+                    padding: 10px;
+                    font-size: 16px;
+                }
+            }
+
+            .addCourseContainer {
+                padding: 20px 100px;
+
+                .addCourseButton {
+                    background-color: #c75959;
+                    color: white;
+                    border: none;
+                    padding: 16px 32px;
+                    border-radius: 12px;
+                    cursor: pointer;
+                    font-size: 16px;
+                    font-weight: bold;
+
+                    &:hover {
+                        background-color: #b04a4a;
+                    }
+                }
+            }
+
+        }
+    }
+}
