@@ -1,17 +1,16 @@
-import { useContext } from "react";
 import { listUserAccount } from "../Login/useLogin";
-import { UserContext } from "../components/UserContext";
 import { useNavigate } from "react-router-dom";
 
-const getCoursesByUser = (userId) => {
-    return listUserAccount.find(users => users.id === userId.id)
+function getCoursesByUser() {
+    const userFromStorage = JSON.parse(localStorage.getItem("user"));
+    if (!userFromStorage || !userFromStorage.id) return null;
+    return listUserAccount.find(users => users.id === userFromStorage.id);
 };
 
 export function DisplayCourses({ stylesProps }) {
-    const { user } = useContext(UserContext);
     const negative = useNavigate();
 
-    const userLogedIn = getCoursesByUser(user);
+    const userLogedIn = getCoursesByUser();
     if (!userLogedIn || !userLogedIn.courses || userLogedIn.courses.length === 0 || !userLogedIn.id) {
         negative('/');
     }

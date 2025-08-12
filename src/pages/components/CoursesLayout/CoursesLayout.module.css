@@ -12,7 +12,7 @@
     display: flex;
     justify-content: space-between;
     color: black;
-    padding: 10px 30px;
+    padding: 10px 70px;
     background-color: white;
     border-bottom: black 1px solid;
 
@@ -22,18 +22,83 @@
       gap: 10px;
       align-items: center;
       font-size: 16px;
+      cursor: pointer;
 
       .logoELearning {
         width: 58px;
         height: 58px;
       }
+
       .avatarAccount {
         width: 42px;
         height: 42px;
       }
+
       .fontUsername {
         font-weight: 600;
         font-size: 16px;
+      }
+    }
+
+    .contentNavHeadingAvatar {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      font-size: 16px;
+      position: relative;
+      cursor: pointer;
+
+      .avatarAccount {
+        width: 42px;
+        height: 42px;
+      }
+
+      .fontUsername {
+        font-weight: 600;
+        font-size: 16px;
+      }
+    }
+
+  }
+
+  .navHeadingProfileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    position: absolute;
+    top: 65px;
+    right: 36px;
+    width: 180px;
+    height: 100px;
+    background-color: white;
+
+
+    .navHeadingProfileContent {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 16px;
+      gap: 10px;
+      padding: 10px;
+      letter-spacing: 2px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #d3d3d3;
+        transition: background-color 0.3s ease;
+        border-radius: 16px;
+        transform: translateY(-2px);
+        transition: all 0.2s ease;
+      }
+
+      .logoInfo {
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
       }
     }
   }
@@ -42,11 +107,11 @@
     display: flex;
     flex-direction: row;
     gap: 42px;
-    margin: 24px 30px;
-    height: 82vh;
+    margin: 24px 70px;
+    height: 84vh;
 
     .navLeftContainer {
-      width: 14%;
+      width: 15%;
       background-color: #8e4c4c;
       color: white;
       border-radius: 16px;
@@ -80,6 +145,7 @@
         height: 32px;
       }
     }
+
     .contentRightContainer {
       background-color: white;
       width: 86%;

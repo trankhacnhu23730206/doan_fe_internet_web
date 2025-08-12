@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UserContext } from '../components/UserContext';
 
 export const listUserAccount = [
     {
@@ -8,8 +7,10 @@ export const listUserAccount = [
         fullName: "Nguyen Van A",
         username: "nguyenvana",
         password: "123456",
-        email: "nguyenvana@example.com",
+        studentID: "SV0001",
+        gender: "Male",
         classCode: "CTK42A",
+        email: "nguyenvana@example.com",
         courses: [
             {
                 courseCode: "MATH301",
@@ -32,8 +33,10 @@ export const listUserAccount = [
         fullName: "Le Thi B",
         username: "lethib",
         password: "abcdef",
-        email: "lethib@example.com",
+        studentID: "SV0002",
+        gender: "Female",
         classCode: "CTK42B",
+        email: "lethib@example.com",
         courses: [
             {
                 courseCode: "DB202",
@@ -56,8 +59,10 @@ export const listUserAccount = [
         fullName: "Tran Van C",
         username: "tranvanc",
         password: "qwerty",
-        email: "tranvanc@example.com",
+        studentID: "SV0003",
+        gender: "Male",
         classCode: "CTK42C",
+        email: "tranvanc@example.com",
         courses: [
             {
                 courseCode: "AI401",
@@ -69,6 +74,7 @@ export const listUserAccount = [
         ]
     }
 ];
+
 
 function isValidAccount(username, password) {
     return listUserAccount.some(user => (user.username === username) && (user.password === password));
@@ -83,8 +89,6 @@ export function useLogin() {
     const [password, setPassword] = useState('');
     const [errorMassage, setErrorMassage] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
-
-    const { login } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -101,10 +105,7 @@ export function useLogin() {
         else {
             const userLogIn = getUserByUserName(username);
             setErrorMassage('');
-            login({
-                username,
-                id: userLogIn.id,
-            })
+            localStorage.setItem('user', JSON.stringify(userLogIn));
             return navigate(`/courses`)
         }
     };
